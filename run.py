@@ -1,6 +1,18 @@
 import argparse
+from pathlib import Path
 from ollama import chat
 from ollama import ChatResponse
+
+
+def load_tags(tags_file: str = './tags.txt') -> str:
+    """Charge les tags depuis le fichier et les retourne sous forme de chaîne séparée par des virgules."""
+    try:
+        with open(tags_file, 'r', encoding='utf-8') as f:
+            tags = [line.strip() for line in f if line.strip()]
+        return ', '.join(tags)
+    except FileNotFoundError:
+        print(f"Avertissement: Le fichier {tags_file} n'a pas été trouvé.")
+        return ''
 
 
 def main():
@@ -43,19 +55,20 @@ def main():
     )
 
     args = parser.parse_args()
+    available_tags = load_tags()
 
-    # TODO: Implémenter la logique de traitement des images
     print(f"Répertoire source: {args.directory}")
     print(f"Modèle LLM: {args.model}")
     print(f"Mode: {'déplacement' if args.move else 'copie'}")
     print(f"Nombre de tags: {args.tagcount}")
     print(f"Répertoire de sortie: {args.outdir}")
 
-    # Exemple d'utilisation du LLM (à adapter avec les arguments)
+    prompt = f'Écrit {args.tagcount} mots-clés en français décrivant cette image, séparés par une virgule, du plus commun au plus spécifique. Le premier mot-clé DOIT être choisi parmi cette liste : {available_tags}. N\'écrit que les mots-clés. Ne répète aucun mot-clé. Tu peux inventer tous les mots-clés que tu veux pour les tags suivants. Exemple : "Personnes, Chat, Salon, Tapis". Mots-clés :'
+
     response: ChatResponse = chat(model=args.model, messages=[
         {
             'role': 'user',
-            'content': f'Écrit {args.tagcount} mots-clés en français décrivant cette image, séparés par une virgule, du plus commun au plus spécifique. N\'écrit que les mots-clés. Exemple : "Personne, Chat, Salon, Tapis". Mots-clés :',
+            'content': prompt,
             'images': ['./images/photos/depositphotos_9209115-stock-photo-young-group-of-friends-hanging.jpg'],
         },
     ])
