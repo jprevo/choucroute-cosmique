@@ -384,8 +384,8 @@ MIT
 ## 🙏 Remerciements
 
 - [Ollama](https://ollama.com) pour l'infrastructure LLM locale
-- [Pillow](https://python-pillow.org/) pour la manipulation d'images
-- [piexif](https://github.com/hMatoba/Piexif) pour la gestion des métadonnées EXIF
+- [Pillow](https://pypi.org/project/pillow/) pour la manipulation d'images
+- [piexif](https://pypi.org/project/piexif/) pour la gestion des métadonnées EXIF
 
 ---
 
