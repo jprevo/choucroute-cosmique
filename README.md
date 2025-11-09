@@ -422,7 +422,8 @@ Les tags sont générés en **français** par défaut. Vous pouvez modifier le p
 ```
 Sur le velours noir du vide, piqué d'étoiles-moutarde.
 
-Chou-nébuleuse, fermenté au laser supernova. Baies-trous noirs, silence poivré. Lunes de méthane tièdes.
+Chou-nébuleuse, fermenté au laser supernova. Baies-trous noirs, silence poivré.
+Lunes de méthane tièdes.
 
 Saucisses-comètes fumées à l'hélium 3. Le jus : une acidité primordiale.
 
