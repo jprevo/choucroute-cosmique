@@ -1,6 +1,6 @@
 # 🌌 Choucroute Cosmique
 
-**Organisateur d'images intelligent utilisant l'intelligence artificielle**
+**Organisateur d'images intelligent et autonome**
 
 Choucroute Cosmique est un outil qui analyse automatiquement vos photos à l'aide d'un modèle de langage (LLM), génère des tags pertinents, et organise vos images dans une structure de dossiers claire et logique.
 
