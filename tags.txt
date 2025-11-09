@@ -1,7 +1,6 @@
 Personnes
 Selfie
 Mariage
-Anniversaire
 Vacances
 Fête
 Travail
