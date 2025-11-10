@@ -359,8 +359,44 @@ choucroute-cosmique/
 ├── exif_tagger.py         # Ajout de métadonnées EXIF
 ├── tags.txt               # Liste des catégories principales
 ├── requirements.txt        # Dépendances Python
+├── tests/                 # Suite de tests complète
 └── README.md              # Ce fichier
 ```
+
+---
+
+## 🧪 Tests
+
+Le projet inclut une suite de tests complète avec **98 tests** couvrant tous les modules.
+
+### Exécuter les tests
+
+```bash
+# Installer les dépendances de test
+pip install pytest pytest-cov
+
+# Lancer tous les tests
+pytest
+
+# Avec rapport de couverture
+pytest --cov=. --cov-report=html
+```
+
+### Couverture de code
+
+- `image_scanner.py` : 100%
+- `llm_client.py` : 100%
+- `file_operations.py` : 100%
+- `parallel_processor.py` : 100%
+- `exif_tagger.py` : 82%
+
+Les tests incluent :
+- Tests unitaires pour chaque module
+- Tests d'intégration end-to-end
+- Mocking des appels LLM (pas besoin d'Ollama pour les tests)
+- Tests avec de vraies images
+
+👉 Plus de détails dans [tests/README.md](tests/README.md)
 
 ---
 
